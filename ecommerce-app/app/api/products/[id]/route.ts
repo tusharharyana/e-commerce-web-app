@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/mongodb";
 import { Product } from "@/models/Product";
+import { verifyAdmin } from "@/lib/auth";
 
 export async function GET(req: Request, context: { params: Promise<{ id: string }> }) {
   await connectDB();
@@ -17,6 +18,11 @@ export async function GET(req: Request, context: { params: Promise<{ id: string 
 }
 
 export async function PUT(req: Request, context: { params: Promise<{ id: string }> }) {
+  const admin = await verifyAdmin(req);
+  if (!admin) {
+    return NextResponse.json({ message: "Forbidden" }, { status: 403 });
+  }
+
   await connectDB();
   const { id } = await context.params;
   try {
@@ -32,6 +38,11 @@ export async function PUT(req: Request, context: { params: Promise<{ id: string 
 }
 
 export async function DELETE(req: Request, context: { params: Promise<{ id: string }> }) {
+  const admin = await verifyAdmin(req);
+  if (!admin) {
+    return NextResponse.json({ message: "Forbidden" }, { status: 403 });
+  }
+  
   await connectDB();
   const { id } = await context.params;
   try {
