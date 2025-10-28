@@ -8,6 +8,7 @@ interface ProductListProps {
     description: string;
     price: number;
     image?: string;
+    slug: string;
   }[];
 }
 

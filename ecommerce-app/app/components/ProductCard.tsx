@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 interface ProductCardProps {
@@ -7,6 +8,7 @@ interface ProductCardProps {
     description: string;
     price: number;
     image?: string;
+    slug: string;
   };
 }
 
@@ -30,14 +32,13 @@ const ProductCard: React.FC<{ product: ProductCardProps["product"] }> = ({ produ
 
       <div className="mt-3">
         <span className="text-lg font-bold text-green-600">${product.price}</span>
-      </div>
-
-      <a
-        href={`api/products/${product._id}`}
-        className="mt-4 inline-block bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition"
-      >
-        View Details
-      </a>
+      </div>  
+    <Link
+      href={`/products/${product.slug}`}
+      className="mt-4 inline-block bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition"
+    >
+      View Details
+    </Link>
     </div>
   );
 };
