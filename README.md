@@ -2,6 +2,17 @@
 
 A modern, full-featured e-commerce application built with Next.js 16, TypeScript, MongoDB, and Tailwind CSS. Features server-side rendering, client-side interactivity, and comprehensive admin management.
 
+## Screenshots
+![alt text](/ecommerce-app/assets/image.png)
+![alt text](/ecommerce-app/assets/image-1.png)
+![alt text](/ecommerce-app/assets/image-2.png)
+![alt text](/ecommerce-app/assets/image-3.png)
+![alt text](/ecommerce-app/assets/image-4.png)
+![alt text](/ecommerce-app/assets/image-5.png)
+![alt text](/ecommerce-app/assets/image-6.png)
+![alt text](/ecommerce-app/assets/image-7.png)
+![alt text](/ecommerce-app/assets/image-8.png)
+
 ## 🚀 Features
 
 - **Next.js App Router** with different rendering strategies (SSG, ISR, SSR, CSR)
