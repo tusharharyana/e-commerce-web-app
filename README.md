@@ -25,14 +25,14 @@ A modern, full-featured e-commerce application built with Next.js 16, TypeScript
 - **Admin Dashboard** with product management
 - **Responsive Design** for all devices
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** Next.js 16, React 19, TypeScript, Tailwind CSS
 - **Backend:** Next.js API Routes, MongoDB, Mongoose
 - **Authentication:** JWT, bcryptjs
 - **Styling:** Tailwind CSS with custom components
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ecommerce-app/
@@ -51,31 +51,25 @@ ecommerce-app/
 └── middleware.ts              # Route protection
 ```
 
-## 🏃‍♂️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
-- MongoDB (local or cloud instance)
-- npm, yarn, pnpm, or bun
+- MongoDB Atlas
+- npm
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/tusharharyana/e-commerce-web-app.git
    cd ecommerce-app
    ```
 
 2. **Install dependencies**
    ```bash
    npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   # or
-   bun install
    ```
 
 3. **Environment Setup**
@@ -83,37 +77,31 @@ ecommerce-app/
    Create a `.env.local` file in the root directory:
 
    ```env
-   MONGODB_URI=mongodb://localhost:27017/shopSmart
+   MONGODB_URI=
    NEXT_PUBLIC_BASE_URL=http://localhost:3000
    JWT_SECRET=your-super-secret-jwt-key
    ```
 
 4. **Start MongoDB**
 
-   Make sure MongoDB is running on your system.
+   Make sure MongoDB is running.
 
 5. **Run the development server**
    ```bash
    npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   # or
-   bun dev
    ```
 
 6. **Open your browser**
 
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🔐 Admin Access
+## Admin Access
 
 - **URL:** `/admin/login`
 - **Username:** `admin@example.com`
 - **Password:** `123456`
 
-## 📊 Rendering Strategies
+## Rendering Strategies
 
 - **Home Page:** ISR (Incremental Static Regeneration) - rebuilds every 60 seconds
 - **Product Detail:** SSR (Server-Side Rendering) - fresh data on each request
@@ -123,33 +111,13 @@ ecommerce-app/
 
 ## 🧪 Testing
 
-Run the linter:
-```bash
-npm run lint
-```
-
 Build for production:
 ```bash
 npm run build
 ```
 
-## 🚀 Deployment
 
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy!
-
-### Other Platforms
-
-The app can be deployed to any platform supporting Next.js:
-- Netlify
-- Railway
-- DigitalOcean App Platform
-
-## 📝 API Endpoints
+## API Endpoints
 
 ### Products
 - `GET /api/products` - Get all products
@@ -164,7 +132,7 @@ The app can be deployed to any platform supporting Next.js:
 - `GET /api/auth/profile` - Get admin profile (protected)
 - `POST /api/auth/register` - Register new admin
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -172,10 +140,6 @@ The app can be deployed to any platform supporting Next.js:
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 📞 Support
+## Support
 
 For questions or issues, please open an issue on GitHub.
