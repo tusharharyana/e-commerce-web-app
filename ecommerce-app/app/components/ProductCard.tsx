@@ -7,38 +7,41 @@ interface ProductCardProps {
     name: string;
     description: string;
     price: number;
-    image?: string;
+    imageUrl?: string;
     slug: string;
   };
 }
 
 const ProductCard: React.FC<{ product: ProductCardProps["product"] }> = ({ product }) => {
   return (
-    <div className="border border-gray-200 rounded-lg p-5 shadow-sm hover:shadow-md transition duration-200 bg-white">
-      {product.image ? (
+    <div className="card-hover border border-gray-200 rounded-xl p-6 shadow-sm bg-white overflow-hidden">
+      {product.imageUrl ? (
         <img
-          src={product.image}
+          src={product.imageUrl}
           alt={product.name}
-          className="w-full h-48 object-cover rounded-md mb-4"
+          className="w-full h-48 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-105"
         />
       ) : (
-        <div className="w-full h-48 bg-gray-100 rounded-md mb-4 flex items-center justify-center text-gray-400">
-          No Image
+        <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg mb-4 flex items-center justify-center text-gray-400">
+          <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+          </svg>
         </div>
       )}
 
-      <h2 className="text-xl font-semibold text-gray-800">{product.name}</h2>
-      <p className="text-gray-600 text-sm mt-1 line-clamp-2">{product.description}</p>
+      <h2 className="text-xl font-bold text-gray-900 mb-2 line-clamp-1">{product.name}</h2>
+      <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">{product.description}</p>
 
-      <div className="mt-3">
-        <span className="text-lg font-bold text-green-600">${product.price}</span>
-      </div>  
-    <Link
-      href={`/products/${product.slug}`}
-      className="mt-4 inline-block bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 transition"
-    >
-      View Details
-    </Link>
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-2xl font-bold text-green-600">${product.price}</span>
+      </div>
+
+      <Link
+        href={`/products/${product.slug}`}
+        className="btn-primary w-full text-center block"
+      >
+        View Details
+      </Link>
     </div>
   );
 };

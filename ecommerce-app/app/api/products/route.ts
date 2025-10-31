@@ -18,8 +18,12 @@ export async function POST(req: Request) {
   await connectDB();
   const body = await req.json();
 
+  // Generate slug from name if not provided
+  const slug = body.slug || body.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
   const product = new Product({
     ...body,
+    slug,
     lastUpdated: new Date()
   });
 
